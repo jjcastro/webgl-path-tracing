@@ -1,72 +1,27 @@
 <!DOCTYPE html>
+
+<!-- WebGL Path Tracing (http://madebyevan.com/webgl-path-tracing/) -->
+
 <html><head>
   <title>WebGL Path Tracing</title>
-  <style type="text/css"><!--
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-body {
-  max-width: 900px;
-  padding: 30px;
-  margin: 0 auto;
-  font: 14px/19px 'Lucida Grande', sans-serif;
-}
+  <!-- LIBRARIES -->
+  <script type="text/javascript" src="./lib/sylvester.src.js"></script>
+  <script type="text/javascript" src="./lib/glUtils.js"></script>
 
-#main {
-  margin: 80px 0;
-  padding-left: 542px;
-  height: 512px;
-  position: relative;
-}
+  <!-- UTILITIES -->
+  <script type="text/javascript" src="./js/shaders.js"></script>
+  <script type="text/javascript" src="./js/utilities.js"></script>
+  <script type="text/javascript" src="./js/Sphere.js"></script>
+  <script type="text/javascript" src="./js/Cube.js"></script>
+  <script type="text/javascript" src="./js/Light.js"></script>
+  <script type="text/javascript" src="./js/PathTracer.js"></script>
+  <script type="text/javascript" src="./js/Renderer.js"></script>
+  <script type="text/javascript" src="./js/UI.js"></script>
 
-#error {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 412px;
-  height: 412px;
-  padding: 50px;
-  text-align: center;
-  background: #DFDFDF;
-}
-
-canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-p, ul {
-  margin: 0 0 30px 0;
-}
-
-h1 {
-  font: bold italic 50px Georgia;
-  margin: 0 0 60px 0;
-  text-align: center;
-}
-
-a {
-  color: inherit;
-}
-
-#footer {
-  text-align: center;
-  margin: 100px 0 0 0;
-}
-
-#glossiness-factor {
-  display: none;
-  font-size: 12px;
-}
-
-#glossiness-factor input {
-  width: 40px;
-  text-align: center;
-}
-
-  --></style>
-  <script type="text/javascript" src="sylvester.src.js"></script>
-  <script type="text/javascript" src="glUtils.js"></script>
-  <script type="text/javascript" src="webgl-path-tracing.js"></script>
+  <!-- MAIN SCENE -->
+  <script type="text/javascript" src="./js/main.js"></script>
 </head><body>
   <h1>WebGL Path Tracing</h1>
 
@@ -101,12 +56,14 @@ a {
         <br>with glossiness factor: 0 &lt; <input id="glossiness" value="0.6"> &lt; 1
       </span>
       <br>
+    </p>
 
-      <b>Environment:</b>
-      <select id="environment">
-        <option value="0" selected>Cornell Box - Yellow and Blue</option>
-        <option value="1">Cornell Box - Red and Green</option>
-      </select>
+    <p>
+      <b>Color 1:</b>
+      <input id="color1" name="Color Picker" type="color"/>
+      <br>
+      <b>Color 2:</b>
+      <input id="color2" name="Color Picker" type="color"/>
     </p>
 
     <p>
